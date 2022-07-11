@@ -16,8 +16,9 @@ public class Teacher implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+    @Column(nullable = false)
     String name;
-    @Column(name = "contact_number")
+    @Column(name = "contact_number", nullable = false)
     String contactNumber;
 
     public Teacher(String name, String contactNumber) {
