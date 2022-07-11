@@ -14,8 +14,11 @@ public class RefreshDemoThree {
             Session session = sessionFactory.openSession()){
             session.beginTransaction();
             // transient/new state => exception
-            Teacher dinusha = new Teacher("Dinusha", "0111234568");
-            session.refresh(dinusha);
+//            Teacher dinusha = new Teacher("Dinusha", "0111234568");
+//            session.refresh(dinusha);
+            Student student = session.get(Student.class, 2);
+            session.remove(student);
+            session.refresh(student);
             session.getTransaction().commit();
         }
     }
