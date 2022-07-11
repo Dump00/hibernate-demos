@@ -6,7 +6,11 @@ import com.cisco.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class UpdateDemoOne {
+public class DirtyCheckingDemo {
+
+    /**
+        * Dirty Checking for updating
+     */
 
     public static void main(String[] args) {
         try(SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
