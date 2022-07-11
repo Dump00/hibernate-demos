@@ -18,8 +18,10 @@ import java.io.Serializable;
 public class Student implements Serializable {
     @Id
     int id;
+    @Column(nullable = false)
     String name;
+    @Column(columnDefinition = "varchar(500)", nullable = false)
     String address;
-    @Column(name = "contact_number")
+    @Column(name = "contact_number", nullable = false)
     String contactNumber;
 }
