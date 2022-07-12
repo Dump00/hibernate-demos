@@ -1,6 +1,8 @@
 package com.cisco.util;
 
 
+import com.cisco.entity.Employee;
+import com.cisco.entity.Spouse;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -18,6 +20,8 @@ public class HibernateUtil {
                 .build();
 
         Metadata metadata = new MetadataSources(standardRegistry)
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Spouse.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
