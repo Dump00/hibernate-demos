@@ -1,13 +1,12 @@
 package com.cisco;
 
 import com.cisco.entity.Employee;
-import com.cisco.entity.Spouse;
 import com.cisco.entity.Vehicle;
 import com.cisco.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class OneToOneDemo04 {
+public class OneToOneDemo07 {
 
     public static void main(String[] args) {
 
@@ -16,15 +15,11 @@ public class OneToOneDemo04 {
 
             session.beginTransaction();
 
-            Employee e002 = session.get(Employee.class, "E002");
+            Vehicle v004 = new Vehicle("V004", "Car");
+            Employee e004 = new Employee("E004", "Hamza", "Colombo", v004);
+            
+            session.persist(e004);
 
-            Vehicle v001 = new Vehicle("V001", "Car");
-            Vehicle v002 = new Vehicle("V002", "Bike", e002);
-            Vehicle v003 = new Vehicle("V003", "Van");
-
-            session.save(v001);
-            session.save(v002);
-            session.save(v003);
 
             session.getTransaction().commit();
         }

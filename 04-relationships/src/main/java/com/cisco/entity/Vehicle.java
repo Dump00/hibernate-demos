@@ -28,3 +28,4 @@ public class Vehicle implements Serializable {
         this.type = type;
     }
 }
+
