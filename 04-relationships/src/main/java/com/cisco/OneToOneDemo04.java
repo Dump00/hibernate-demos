@@ -1,7 +1,6 @@
 package com.cisco;
 
 import com.cisco.entity.Employee;
-import com.cisco.entity.Spouse;
 import com.cisco.entity.Vehicle;
 import com.cisco.util.HibernateUtil;
 import org.hibernate.Session;
