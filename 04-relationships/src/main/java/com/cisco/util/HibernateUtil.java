@@ -2,6 +2,7 @@ package com.cisco.util;
 
 
 import com.cisco.entity.*;
+import com.cisco.entity.Class;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -42,6 +43,10 @@ public class HibernateUtil {
                 .addAnnotatedClass(Vehicle2Employee2.class)
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Order.class)
+                .addAnnotatedClass(Customer2.class)
+                .addAnnotatedClass(Order2.class)
+                .addAnnotatedClass(Class.class)
+                .addAnnotatedClass(Student.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
