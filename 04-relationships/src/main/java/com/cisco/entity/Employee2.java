@@ -19,5 +19,4 @@ public class Employee2 implements Serializable {
     private String name;
     @Column(nullable = false)
     private String address;
-
 }
