@@ -1,14 +1,16 @@
 package com.cisco;
 
-import com.cisco.entity.*;
 import com.cisco.entity.Class;
+import com.cisco.entity.ClassStudent;
+import com.cisco.entity.ClassStudentPK;
+import com.cisco.entity.Student;
 import com.cisco.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.sql.Date;
 
-public class OneToManyDemo12 {
+public class OneToManyDemo14 {
 
     public static void main(String[] args) {
 
@@ -27,8 +29,12 @@ public class OneToManyDemo12 {
             session.save(s001);
             session.save(s002);
 
-            ClassStudent cs01 = new ClassStudent("DEP", "S001", Date.valueOf("2022-07-15"));
-            session.save(cs01);
+            ClassStudent cs01 = new ClassStudent(new ClassStudentPK("DEP", "S001"),
+                    Date.valueOf("2022-07-15"), dep, s001);
+            ClassStudent cs02 = new ClassStudent(new ClassStudentPK("DEP", "S002"), Date.valueOf("2022-07-15"));
+            session.persist(cs01);
+            session.save(cs02);
+
 
             session.getTransaction().commit();
         }
